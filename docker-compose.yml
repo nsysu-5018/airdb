@@ -1,0 +1,23 @@
+services:
+  web:
+    build:
+      context: ./airdb-web
+      dockerfile: Dockerfile
+    ports:
+      - "8001:80"
+
+  model_airbox:
+    container_name: airdb_model_airBox
+    build:
+      context: ./airdb-model_airBox
+      dockerfile: Dockerfile
+    environment:
+      - MOE_API_KEY
+      - GOOGLE_API_KEY
+    
+  db:
+    container_name: airdb_db
+    image: mysql:lts
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD
