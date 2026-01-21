@@ -9,6 +9,7 @@ This repository orchestrates all airdb modules using Docker Compose for local de
 ```bash
 git clone git@github.com:nsysu-5018/airdb-model_airBox.git
 git clone git@github.com:nsysu-5018/airdb-web.git
+git clone git@github.com:nsysu-5018/airdb-aqi.git
 ```
 
 ### 2. Configure environment variables

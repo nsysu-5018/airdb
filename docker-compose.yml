@@ -21,3 +21,12 @@ services:
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD
+  
+  aqi:
+    container_name: airdb_aqi
+    build:
+      context: ./airdb-aqi
+      dockerfile: Dockerfile
+    volumes:
+      - ./airdb-aqi/airdb.db:/mnt/aqi-app/airdb.db
+  
