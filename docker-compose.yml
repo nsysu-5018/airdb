@@ -30,3 +30,9 @@ services:
     volumes:
       - ./airdb-aqi/airdb.db:/mnt/aqi-app/airdb.db
   
+  tb:
+    container_name: airdb_TB
+    build:
+      context: ./airdb-TB
+      dockerfile: Dockerfile
+  
