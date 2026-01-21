@@ -32,8 +32,7 @@ docker compose up --build
 On first run, you need to set up the database schema and user:
 
 ```bash
-docker compose exec db bash
-mysql -u root -p
+docker compose exec db mysql -u root -p
 ```
 
 Then run the following SQL commands:
