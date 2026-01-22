@@ -6,10 +6,10 @@ services:
     ports:
       - "8001:80"
 
-  model_airbox:
-    container_name: airdb_model_airBox
+  airbox:
+    container_name: airdb_airBox
     build:
-      context: ./airdb-model_airBox
+      context: ./airdb-airBox
       dockerfile: Dockerfile
     environment:
       - MOE_API_KEY
