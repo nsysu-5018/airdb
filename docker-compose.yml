@@ -36,3 +36,9 @@ services:
       context: ./airdb-TB
       dockerfile: Dockerfile
   
+  copd:
+    container_name: airdb_COPD
+    build:
+      context: ./airdb-COPD
+      dockerfile: Dockerfile
+  
