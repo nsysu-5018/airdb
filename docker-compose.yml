@@ -6,6 +6,8 @@ services:
     ports:
       - "8001:80"
     restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
 
   airbox:
     container_name: airdb_airBox
@@ -16,6 +18,8 @@ services:
     environment:
       - MOE_API_KEY
       - GOOGLE_API_KEY
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
     
   db:
     container_name: airdb_db
@@ -23,6 +27,8 @@ services:
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
   
   aqi:
     container_name: airdb_aqi
@@ -32,6 +38,7 @@ services:
     restart: always
     volumes:
       - ./airdb-aqi/airdb.db:/mnt/aqi-app/airdb.db
+      - /etc/localtime:/etc/localtime:ro
   
   tb:
     container_name: airdb_TB
@@ -39,6 +46,8 @@ services:
       context: ./airdb-TB
       dockerfile: Dockerfile
     restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
   
   copd:
     container_name: airdb_COPD
@@ -46,4 +55,6 @@ services:
       context: ./airdb-COPD
       dockerfile: Dockerfile
     restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
   
