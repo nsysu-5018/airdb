@@ -5,12 +5,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8001:80"
+    restart: always
 
   airbox:
     container_name: airdb_airBox
     build:
       context: ./airdb-airBox
       dockerfile: Dockerfile
+    restart: always
     environment:
       - MOE_API_KEY
       - GOOGLE_API_KEY
@@ -27,6 +29,7 @@ services:
     build:
       context: ./airdb-aqi
       dockerfile: Dockerfile
+    restart: always
     volumes:
       - ./airdb-aqi/airdb.db:/mnt/aqi-app/airdb.db
   
@@ -35,10 +38,12 @@ services:
     build:
       context: ./airdb-TB
       dockerfile: Dockerfile
+    restart: always
   
   copd:
     container_name: airdb_COPD
     build:
       context: ./airdb-COPD
       dockerfile: Dockerfile
+    restart: always
   
