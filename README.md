@@ -68,6 +68,8 @@ FLUSH PRIVILEGES;
 
 Exit the container with `exit`.
 
+Once complete, access the web application at [http://localhost/Disease](http://localhost/Disease)
+
 ## 🛠️ Common Commands
 
 ### View logs
