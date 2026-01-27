@@ -24,13 +24,19 @@ export MOE_API_KEY="your_api_key_here"
 export MYSQL_ROOT_PASSWORD="your_mysql_root_password"
 ```
 
-### 3. Start the stack
+### 3. Create Docker volume
+Create the required volume for database persistence:
+```bash
+docker volume create airdb_db
+```
+
+### 4. Start the stack
 
 ```bash
 docker compose up --build
 ```
 
-### 4. Initialize the database
+### 5. Initialize the database
 
 On first run, you need to set up the database schema and user:
 
