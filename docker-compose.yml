@@ -5,6 +5,12 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
+    depends_on:
+      - aqi
+      - airbox
+      - tb
+      - copd
+      - db
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
