@@ -66,6 +66,25 @@ GRANT ALL PRIVILEGES ON web.* TO 'web'@'%';
 FLUSH PRIVILEGES;
 ```
 
+### 6. Configure the web service
+
+Create the web service environment file:
+
+```bash
+cp airdb-web/src/Disease/env airdb-web/src/Disease/.env
+```
+
+Edit `src/Disease/.env` and configure:
+
+```env
+# Uncomment and set your application base URL
+# app.baseURL = 'http://localhost/Disease'
+
+# Uncomment and set your database credentials (use the same password from step 5)
+# database.default.username = web
+# database.default.password = your_password_here
+```
+
 Exit the container with `exit`.
 
 Once complete, access the web application at [http://localhost/Disease](http://localhost/Disease)
