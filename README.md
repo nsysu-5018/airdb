@@ -30,13 +30,27 @@ Create the required volume for database persistence:
 docker volume create airdb_db
 ```
 
-### 4. Start the stack
+### 4. Prepare the SQLite Database
+
+Prepare the SQLite database at the following location:
+
+```text
+./airdb-aqi/airdb.db
+```
+
+After the database has been properly placed, verify that the file exists:
+
+```bash
+ls ./airdb-aqi/airdb.db
+```
+
+### 5. Start the stack
 
 ```bash
 docker compose up --build
 ```
 
-### 5. Initialize the database
+### 6. Initialize the database
 
 On first run, you need to set up the database schema and user:
 
@@ -66,7 +80,7 @@ GRANT ALL PRIVILEGES ON web.* TO 'web'@'%';
 FLUSH PRIVILEGES;
 ```
 
-### 6. Configure the web service
+### 7. Configure the web service
 
 Create the web service environment file:
 
